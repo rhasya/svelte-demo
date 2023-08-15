@@ -1,9 +1,7 @@
-export async function handle({ event, resolve }) {
-	// check cookie
-	const { cookies, locals } = event;
+import { auth } from '$lib/server/lucia';
 
-	const username = cookies.get('username');
-	locals.username = username ? username : null;
+export async function handle({ event, resolve }) {
+	event.locals.auth = auth.handleRequest(event);
 
 	return await resolve(event);
 }

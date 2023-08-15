@@ -4,10 +4,18 @@ declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
-			username: string?
+			auth: import('lucia').AuthRequest;
 		}
 		// interface PageData {}
 		// interface Platform {}
+	}
+
+	namespace Lucia {
+		type Auth = typeof import('$lib/server/lucia').auth;
+		type DatabaseUserAttributes = {
+			username: string;
+		};
+		type DatabaseSessionAttributes = {};
 	}
 }
 
