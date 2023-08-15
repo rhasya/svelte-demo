@@ -10,9 +10,9 @@ export const auth = lucia({
 	env: dev ? 'DEV' : 'PROD',
 	middleware: sveltekit(),
 	adapter: prisma(prismaClient, {
-		user: 'User',
-		key: 'Key',
-		session: 'Session'
+		user: 'user',
+		key: 'key',
+		session: 'session'
 	}),
 
 	getUserAttributes: (data) => {
