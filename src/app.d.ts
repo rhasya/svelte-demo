@@ -1,6 +1,9 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 declare global {
+
+	var prisma: import('@prisma/client').PrismaClient?;
+
 	namespace App {
 		// interface Error {}
 		interface Locals {

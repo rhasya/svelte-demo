@@ -5,7 +5,7 @@
 <main>
 	<h1>Login</h1>
 	<form method="POST">
-		<button type="submit">TEST LOGIN</button>
+		<button type="submit">TEST ADMIN LOGIN</button>
 	</form>
 </main>
 

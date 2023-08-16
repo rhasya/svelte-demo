@@ -5,7 +5,10 @@ import { LuciaError } from 'lucia';
 export const actions = {
 	default: async ({ locals }) => {
 		try {
-			const user = await auth.useKey('username', 'admin', 'admin');
+			const username = 'admin';
+			const password = 'admin';
+
+			const user = await auth.useKey('username', username, password);
 			const session = await auth.createSession({
 				userId: user.userId,
 				attributes: {}
