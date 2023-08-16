@@ -7,6 +7,11 @@ body {
   height: 100vh;
 }
 
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 :root {
   --font-size: 16px;
   font-size: var(--font-size);

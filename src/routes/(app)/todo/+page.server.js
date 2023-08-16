@@ -1,4 +1,5 @@
 import todo from '@repo/todo';
+import { fail } from '@sveltejs/kit';
 
 export async function load({ depends }) {
 	depends('app:load_todo');
@@ -15,14 +16,24 @@ export async function load({ depends }) {
 }
 
 export const actions = {
-	default: async ({ request }) => {
+	default: async ({ request, locals }) => {
 		const formData = await request.formData();
-		const content = `${formData.get('content') ?? ''}`;
+		const content = formData.get('content');
+
+		if (typeof content !== 'string' || content.length > 1000) {
+			return fail(400, { message: 'Invalid content' });
+		}
+
+		const session = await locals.auth.validate();
+		if (!session) {
+			return fail(500);
+		}
 
 		// Save
 		await todo.create({
 			data: {
-				content
+				content,
+				created_by: session.user.userId
 			}
 		});
 
