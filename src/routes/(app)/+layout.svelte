@@ -2,6 +2,7 @@
 	<nav class="nav">
 		<ul>
 			<li><a href="/">Home</a></li>
+			<li><a href="/user">User</a></li>
 			<li><a href="/todo">Todo</a></li>
 		</ul>
 	</nav>

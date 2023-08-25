@@ -2,7 +2,7 @@ import { auth } from '$lib/server/lucia.js';
 import { fail, redirect } from '@sveltejs/kit';
 
 export const actions = {
-	default: async ({ request, locals }) => {
+	default: async ({ request }) => {
 		console.log('SIGN UP...');
 
 		const formData = await request.formData();
@@ -23,7 +23,7 @@ export const actions = {
 		}
 
 		try {
-			const user = await auth.createUser({
+			await auth.createUser({
 				key: {
 					providerId: 'username',
 					providerUserId: username.toLowerCase(),
