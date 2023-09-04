@@ -3,7 +3,9 @@
 </script>
 
 <h1>Dashboard</h1>
-<p>환영합니다. {data.username}님!</p>
+<section class="mb-4">
+	<p>환영합니다. {data.username}님!</p>
+</section>
 <form method="POST">
-	<button>Sign out</button>
+	<button class="btn">Sign out</button>
 </form>

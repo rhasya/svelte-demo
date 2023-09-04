@@ -6,3 +6,5 @@ full stack application demo with svelte
 
 * svelte / sveltekit
 * lucia
+* tailwindcss
+* daisy-ui
