@@ -3,8 +3,6 @@
 	import { invalidate } from '$app/navigation';
 	import api from '$lib/api.js';
 
-	import Input from '@components/Input.svelte';
-
 	export let data;
 	export let form;
 
@@ -28,7 +26,7 @@
 </ul>
 <form method="POST" use:enhance>
 	<div class="input-wrap">
-		<Input name="content" value={form?.content ?? ''} />
+		<input type="text" name="content" value={form?.content ?? ''} />
 		<button>등록</button>
 	</div>
 </form>

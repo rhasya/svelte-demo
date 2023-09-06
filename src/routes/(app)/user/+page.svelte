@@ -4,7 +4,7 @@
 
 <h1>User</h1>
 
-<table>
+<table class="table mb-4">
 	<thead>
 		<tr>
 			<th>NO</th>
@@ -21,24 +21,5 @@
 	</tbody>
 </table>
 <div>
-	<a href="/user/new" role="button">New User</a>
+	<a role="button" class="btn btn-primary" href="/user/new">New User</a>
 </div>
-
-<style lang="scss">
-	table {
-		border-collapse: collapse;
-		margin-bottom: 20px;
-		th,
-		td {
-			border: 1px solid black;
-			padding: 2px 4px;
-		}
-		td:nth-child(1) {
-			width: 100px;
-			text-align: right;
-		}
-		td:nth-child(2) {
-			width: 100px;
-		}
-	}
-</style>
